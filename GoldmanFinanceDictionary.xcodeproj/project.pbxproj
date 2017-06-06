@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23301D951EE6CDC600C5DD7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301D941EE6CDC600C5DD7E /* AppDelegate.swift */; };
+		23301D971EE6CDC600C5DD7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301D961EE6CDC600C5DD7E /* ViewController.swift */; };
+		23301D9A1EE6CDC600C5DD7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23301D981EE6CDC600C5DD7E /* Main.storyboard */; };
+		23301D9C1EE6CDC600C5DD7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23301D9B1EE6CDC600C5DD7E /* Assets.xcassets */; };
+		23301D9F1EE6CDC600C5DD7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23301D9D1EE6CDC600C5DD7E /* LaunchScreen.storyboard */; };
+		23301DAA1EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DA91EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.swift */; };
+		23301DB51EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DB41EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23301DA61EE6CDC600C5DD7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23301D891EE6CDC600C5DD7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23301D901EE6CDC600C5DD7E;
+			remoteInfo = GoldmanFinanceDictionary;
+		};
+		23301DB11EE6CDC600C5DD7E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23301D891EE6CDC600C5DD7E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23301D901EE6CDC600C5DD7E;
+			remoteInfo = GoldmanFinanceDictionary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		23301D911EE6CDC600C5DD7E /* GoldmanFinanceDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoldmanFinanceDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23301D941EE6CDC600C5DD7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		23301D961EE6CDC600C5DD7E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		23301D991EE6CDC600C5DD7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		23301D9B1EE6CDC600C5DD7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		23301D9E1EE6CDC600C5DD7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		23301DA01EE6CDC600C5DD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23301DA51EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldmanFinanceDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23301DA91EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldmanFinanceDictionaryTests.swift; sourceTree = "<group>"; };
+		23301DAB1EE6CDC600C5DD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23301DB01EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldmanFinanceDictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23301DB41EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldmanFinanceDictionaryUITests.swift; sourceTree = "<group>"; };
+		23301DB61EE6CDC600C5DD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23301D8E1EE6CDC600C5DD7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23301DA21EE6CDC600C5DD7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23301DAD1EE6CDC600C5DD7E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23301D881EE6CDC600C5DD7E = {
+			isa = PBXGroup;
+			children = (
+				23301D931EE6CDC600C5DD7E /* GoldmanFinanceDictionary */,
+				23301DA81EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests */,
+				23301DB31EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests */,
+				23301D921EE6CDC600C5DD7E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		23301D921EE6CDC600C5DD7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23301D911EE6CDC600C5DD7E /* GoldmanFinanceDictionary.app */,
+				23301DA51EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.xctest */,
+				23301DB01EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23301D931EE6CDC600C5DD7E /* GoldmanFinanceDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				23301D941EE6CDC600C5DD7E /* AppDelegate.swift */,
+				23301D961EE6CDC600C5DD7E /* ViewController.swift */,
+				23301D981EE6CDC600C5DD7E /* Main.storyboard */,
+				23301D9B1EE6CDC600C5DD7E /* Assets.xcassets */,
+				23301D9D1EE6CDC600C5DD7E /* LaunchScreen.storyboard */,
+				23301DA01EE6CDC600C5DD7E /* Info.plist */,
+			);
+			path = GoldmanFinanceDictionary;
+			sourceTree = "<group>";
+		};
+		23301DA81EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				23301DA91EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.swift */,
+				23301DAB1EE6CDC600C5DD7E /* Info.plist */,
+			);
+			path = GoldmanFinanceDictionaryTests;
+			sourceTree = "<group>";
+		};
+		23301DB31EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				23301DB41EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift */,
+				23301DB61EE6CDC600C5DD7E /* Info.plist */,
+			);
+			path = GoldmanFinanceDictionaryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23301D901EE6CDC600C5DD7E /* GoldmanFinanceDictionary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23301DB91EE6CDC600C5DD7E /* Build configuration list for PBXNativeTarget "GoldmanFinanceDictionary" */;
+			buildPhases = (
+				23301D8D1EE6CDC600C5DD7E /* Sources */,
+				23301D8E1EE6CDC600C5DD7E /* Frameworks */,
+				23301D8F1EE6CDC600C5DD7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoldmanFinanceDictionary;
+			productName = GoldmanFinanceDictionary;
+			productReference = 23301D911EE6CDC600C5DD7E /* GoldmanFinanceDictionary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		23301DA41EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23301DBC1EE6CDC600C5DD7E /* Build configuration list for PBXNativeTarget "GoldmanFinanceDictionaryTests" */;
+			buildPhases = (
+				23301DA11EE6CDC600C5DD7E /* Sources */,
+				23301DA21EE6CDC600C5DD7E /* Frameworks */,
+				23301DA31EE6CDC600C5DD7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23301DA71EE6CDC600C5DD7E /* PBXTargetDependency */,
+			);
+			name = GoldmanFinanceDictionaryTests;
+			productName = GoldmanFinanceDictionaryTests;
+			productReference = 23301DA51EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		23301DAF1EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23301DBF1EE6CDC600C5DD7E /* Build configuration list for PBXNativeTarget "GoldmanFinanceDictionaryUITests" */;
+			buildPhases = (
+				23301DAC1EE6CDC600C5DD7E /* Sources */,
+				23301DAD1EE6CDC600C5DD7E /* Frameworks */,
+				23301DAE1EE6CDC600C5DD7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23301DB21EE6CDC600C5DD7E /* PBXTargetDependency */,
+			);
+			name = GoldmanFinanceDictionaryUITests;
+			productName = GoldmanFinanceDictionaryUITests;
+			productReference = 23301DB01EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		23301D891EE6CDC600C5DD7E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = libowen;
+				TargetAttributes = {
+					23301D901EE6CDC600C5DD7E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = KM6P947ZT3;
+						ProvisioningStyle = Automatic;
+					};
+					23301DA41EE6CDC600C5DD7E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = KM6P947ZT3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 23301D901EE6CDC600C5DD7E;
+					};
+					23301DAF1EE6CDC600C5DD7E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = KM6P947ZT3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 23301D901EE6CDC600C5DD7E;
+					};
+				};
+			};
+			buildConfigurationList = 23301D8C1EE6CDC600C5DD7E /* Build configuration list for PBXProject "GoldmanFinanceDictionary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 23301D881EE6CDC600C5DD7E;
+			productRefGroup = 23301D921EE6CDC600C5DD7E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23301D901EE6CDC600C5DD7E /* GoldmanFinanceDictionary */,
+				23301DA41EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests */,
+				23301DAF1EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23301D8F1EE6CDC600C5DD7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23301D9F1EE6CDC600C5DD7E /* LaunchScreen.storyboard in Resources */,
+				23301D9C1EE6CDC600C5DD7E /* Assets.xcassets in Resources */,
+				23301D9A1EE6CDC600C5DD7E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23301DA31EE6CDC600C5DD7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23301DAE1EE6CDC600C5DD7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23301D8D1EE6CDC600C5DD7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23301D971EE6CDC600C5DD7E /* ViewController.swift in Sources */,
+				23301D951EE6CDC600C5DD7E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23301DA11EE6CDC600C5DD7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23301DAA1EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23301DAC1EE6CDC600C5DD7E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23301DB51EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23301DA71EE6CDC600C5DD7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23301D901EE6CDC600C5DD7E /* GoldmanFinanceDictionary */;
+			targetProxy = 23301DA61EE6CDC600C5DD7E /* PBXContainerItemProxy */;
+		};
+		23301DB21EE6CDC600C5DD7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23301D901EE6CDC600C5DD7E /* GoldmanFinanceDictionary */;
+			targetProxy = 23301DB11EE6CDC600C5DD7E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		23301D981EE6CDC600C5DD7E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23301D991EE6CDC600C5DD7E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		23301D9D1EE6CDC600C5DD7E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23301D9E1EE6CDC600C5DD7E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		23301DB71EE6CDC600C5DD7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		23301DB81EE6CDC600C5DD7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		23301DBA1EE6CDC600C5DD7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KM6P947ZT3;
+				INFOPLIST_FILE = GoldmanFinanceDictionary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owen.GoldmanFinanceDictionary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		23301DBB1EE6CDC600C5DD7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KM6P947ZT3;
+				INFOPLIST_FILE = GoldmanFinanceDictionary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owen.GoldmanFinanceDictionary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		23301DBD1EE6CDC600C5DD7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KM6P947ZT3;
+				INFOPLIST_FILE = GoldmanFinanceDictionaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owen.GoldmanFinanceDictionaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldmanFinanceDictionary.app/GoldmanFinanceDictionary";
+			};
+			name = Debug;
+		};
+		23301DBE1EE6CDC600C5DD7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = KM6P947ZT3;
+				INFOPLIST_FILE = GoldmanFinanceDictionaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owen.GoldmanFinanceDictionaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoldmanFinanceDictionary.app/GoldmanFinanceDictionary";
+			};
+			name = Release;
+		};
+		23301DC01EE6CDC600C5DD7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = KM6P947ZT3;
+				INFOPLIST_FILE = GoldmanFinanceDictionaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owen.GoldmanFinanceDictionaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GoldmanFinanceDictionary;
+			};
+			name = Debug;
+		};
+		23301DC11EE6CDC600C5DD7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = KM6P947ZT3;
+				INFOPLIST_FILE = GoldmanFinanceDictionaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owen.GoldmanFinanceDictionaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GoldmanFinanceDictionary;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23301D8C1EE6CDC600C5DD7E /* Build configuration list for PBXProject "GoldmanFinanceDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23301DB71EE6CDC600C5DD7E /* Debug */,
+				23301DB81EE6CDC600C5DD7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23301DB91EE6CDC600C5DD7E /* Build configuration list for PBXNativeTarget "GoldmanFinanceDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23301DBA1EE6CDC600C5DD7E /* Debug */,
+				23301DBB1EE6CDC600C5DD7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		23301DBC1EE6CDC600C5DD7E /* Build configuration list for PBXNativeTarget "GoldmanFinanceDictionaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23301DBD1EE6CDC600C5DD7E /* Debug */,
+				23301DBE1EE6CDC600C5DD7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		23301DBF1EE6CDC600C5DD7E /* Build configuration list for PBXNativeTarget "GoldmanFinanceDictionaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23301DC01EE6CDC600C5DD7E /* Debug */,
+				23301DC11EE6CDC600C5DD7E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 23301D891EE6CDC600C5DD7E /* Project object */;
+}
