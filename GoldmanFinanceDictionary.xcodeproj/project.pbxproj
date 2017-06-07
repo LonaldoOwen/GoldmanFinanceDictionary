@@ -14,6 +14,8 @@
 		23301D9F1EE6CDC600C5DD7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23301D9D1EE6CDC600C5DD7E /* LaunchScreen.storyboard */; };
 		23301DAA1EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DA91EE6CDC600C5DD7E /* GoldmanFinanceDictionaryTests.swift */; };
 		23301DB51EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DB41EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift */; };
+		23301DC31EE6D10900C5DD7E /* DictionaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DC21EE6D10900C5DD7E /* DictionaryTableViewCell.swift */; };
+		23301DC51EE6D14500C5DD7E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DC41EE6D14500C5DD7E /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		23301DB01EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoldmanFinanceDictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23301DB41EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldmanFinanceDictionaryUITests.swift; sourceTree = "<group>"; };
 		23301DB61EE6CDC600C5DD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23301DC21EE6D10900C5DD7E /* DictionaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTableViewCell.swift; sourceTree = "<group>"; };
+		23301DC41EE6D14500C5DD7E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				23301D941EE6CDC600C5DD7E /* AppDelegate.swift */,
 				23301D961EE6CDC600C5DD7E /* ViewController.swift */,
 				23301D981EE6CDC600C5DD7E /* Main.storyboard */,
+				23301DC41EE6D14500C5DD7E /* TableViewController.swift */,
+				23301DC21EE6D10900C5DD7E /* DictionaryTableViewCell.swift */,
 				23301D9B1EE6CDC600C5DD7E /* Assets.xcassets */,
 				23301D9D1EE6CDC600C5DD7E /* LaunchScreen.storyboard */,
 				23301DA01EE6CDC600C5DD7E /* Info.plist */,
@@ -264,6 +270,8 @@
 			files = (
 				23301D971EE6CDC600C5DD7E /* ViewController.swift in Sources */,
 				23301D951EE6CDC600C5DD7E /* AppDelegate.swift in Sources */,
+				23301DC31EE6D10900C5DD7E /* DictionaryTableViewCell.swift in Sources */,
+				23301DC51EE6D14500C5DD7E /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
