@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wTI-bj-0sE">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wTI-bj-0sE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,47 +14,54 @@
         <scene sceneID="vMu-Jn-rhN">
             <objects>
                 <tableViewController id="O8r-pJ-s78" customClass="TableViewController" customModule="GoldmanFinanceDictionary" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="133" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZrJ-Js-jd4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZrJ-Js-jd4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DictonaryCell" id="eLr-Go-DOx" customClass="DictionaryTableViewCell" customModule="GoldmanFinanceDictionary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="133"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DictonaryCell" rowHeight="111" id="eLr-Go-DOx" customClass="DictionaryTableViewCell" customModule="GoldmanFinanceDictionary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eLr-Go-DOx" id="av6-AL-6da">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96A-1O-72E" userLabel="BackgroundView">
-                                            <rect key="frame" x="18" y="18" width="339" height="96.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="Explain" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYp-EK-ZIt">
-                                                    <rect key="frame" x="8" y="8" width="323" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ZYp-EK-ZIt" secondAttribute="trailing" constant="8" id="7RB-MO-XuN"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZYp-EK-ZIt" secondAttribute="bottom" constant="8" id="8C9-Sm-dIU"/>
-                                                <constraint firstItem="ZYp-EK-ZIt" firstAttribute="leading" secondItem="96A-1O-72E" secondAttribute="leading" constant="8" id="8HQ-Xf-srI"/>
-                                            </constraints>
-                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="EnglishLabel" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUU-d7-pSQ">
+                                            <rect key="frame" x="18" y="8" width="339" height="23"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="ChineseLabel" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrE-T4-o6x">
+                                            <rect key="frame" x="18" y="39" width="339" height="26.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Explain" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYp-EK-ZIt">
+                                            <rect key="frame" x="18" y="73.5" width="339" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="96A-1O-72E" firstAttribute="centerY" secondItem="av6-AL-6da" secondAttribute="centerY" id="6CT-se-32k"/>
-                                        <constraint firstItem="96A-1O-72E" firstAttribute="top" secondItem="av6-AL-6da" secondAttribute="topMargin" constant="10" id="JbI-md-861"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="96A-1O-72E" secondAttribute="trailing" constant="10" id="Mtt-uZ-pJ8"/>
-                                        <constraint firstItem="96A-1O-72E" firstAttribute="centerX" secondItem="av6-AL-6da" secondAttribute="centerX" id="fEj-Bb-rqI"/>
-                                        <constraint firstItem="96A-1O-72E" firstAttribute="leading" secondItem="av6-AL-6da" secondAttribute="leadingMargin" constant="10" id="kfY-s6-xl4"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="96A-1O-72E" secondAttribute="bottom" constant="10" id="ul7-YW-TFw"/>
+                                        <constraint firstItem="ZYp-EK-ZIt" firstAttribute="top" secondItem="XrE-T4-o6x" secondAttribute="bottom" constant="8" id="HfD-d8-MlT"/>
+                                        <constraint firstItem="ZYp-EK-ZIt" firstAttribute="top" secondItem="XrE-T4-o6x" secondAttribute="bottom" constant="8" id="Lq9-oa-0Tn"/>
+                                        <constraint firstItem="ZYp-EK-ZIt" firstAttribute="leading" secondItem="av6-AL-6da" secondAttribute="leadingMargin" constant="10" id="Ofq-L5-jfR"/>
+                                        <constraint firstItem="XrE-T4-o6x" firstAttribute="leading" secondItem="av6-AL-6da" secondAttribute="leadingMargin" constant="10" id="OnZ-fW-BPE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ZYp-EK-ZIt" secondAttribute="trailing" constant="10" id="W8D-CM-ait"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="XrE-T4-o6x" secondAttribute="trailing" constant="10" id="Yn9-dj-UrB"/>
+                                        <constraint firstItem="rUU-d7-pSQ" firstAttribute="top" secondItem="av6-AL-6da" secondAttribute="topMargin" id="dej-Wq-aCF"/>
+                                        <constraint firstItem="rUU-d7-pSQ" firstAttribute="leading" secondItem="av6-AL-6da" secondAttribute="leadingMargin" constant="10" id="hpT-jV-MOl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rUU-d7-pSQ" secondAttribute="trailing" constant="10" id="pXz-vE-cv2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ZYp-EK-ZIt" secondAttribute="bottom" constant="8" id="t3y-Cm-8OO"/>
+                                        <constraint firstItem="XrE-T4-o6x" firstAttribute="top" secondItem="rUU-d7-pSQ" secondAttribute="bottom" constant="8" id="tPr-ml-KiZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="backgroundView" destination="96A-1O-72E" id="pPZ-GY-ply"/>
+                                    <outlet property="chineseTitle" destination="XrE-T4-o6x" id="lEB-4B-kZH"/>
+                                    <outlet property="englishTitle" destination="rUU-d7-pSQ" id="der-hd-8fb"/>
                                     <outlet property="explainLable" destination="ZYp-EK-ZIt" id="VVh-bq-0X8"/>
                                 </connections>
                             </tableViewCell>

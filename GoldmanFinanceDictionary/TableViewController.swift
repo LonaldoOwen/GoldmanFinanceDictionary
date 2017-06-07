@@ -36,8 +36,8 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        //tableView.dataSource = self
+        //tableView.delegate = self
         // 自动适应行高
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -62,7 +62,8 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: DictionaryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DictonaryCell", for: indexPath) as! DictionaryTableViewCell
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "DictonaryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DictonaryCell") as! DictionaryTableViewCell
 
         // Configure the cell...
         cell.englishTitle.text = dataArray[indexPath.row].englishTitle
