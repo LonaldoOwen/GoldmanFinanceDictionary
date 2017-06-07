@@ -36,17 +36,49 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        
+        // 使用UITableViewController不用这两行
         //tableView.dataSource = self
         //tableView.delegate = self
         // 自动适应行高
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        //
+        let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_C"
+        request(httpUrl: urlString)
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    /// 请求url获取HTML源码
+    func request(httpUrl: String) {
+        
+        let url: NSURL = NSURL(string: httpUrl)!
+        var request = URLRequest(url: url as URL)
+        request.timeoutInterval = 10
+        request.httpMethod = "GET"
+        
+        let configuration: URLSessionConfiguration = URLSessionConfiguration.default
+        let session:URLSession = URLSession(configuration: configuration)
+        let dataTask:URLSessionDataTask = session.dataTask(with: request) { (data, response, error) in
+            if error != nil {
+                print("error")
+            } else {
+                print("//prints:\n response:\(response)")
+                // NSData转String
+                let dataString = (NSString(data: data!, encoding: String.Encoding.utf8.rawValue))! as String
+                print("//prints:\n data:\(dataString)")
+            }
+        }
+        dataTask.resume()
+    }
+    
 
     // MARK: - Table view data source
 
