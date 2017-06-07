@@ -425,6 +425,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KM6P947ZT3;
 				INFOPLIST_FILE = GoldmanFinanceDictionary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owen.GoldmanFinanceDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,6 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KM6P947ZT3;
 				INFOPLIST_FILE = GoldmanFinanceDictionary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owen.GoldmanFinanceDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -522,6 +524,7 @@
 				23301DBB1EE6CDC600C5DD7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23301DBC1EE6CDC600C5DD7E /* Build configuration list for PBXNativeTarget "GoldmanFinanceDictionaryTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +533,7 @@
 				23301DBE1EE6CDC600C5DD7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23301DBF1EE6CDC600C5DD7E /* Build configuration list for PBXNativeTarget "GoldmanFinanceDictionaryUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +542,7 @@
 				23301DC11EE6CDC600C5DD7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -65,8 +65,8 @@ class TableViewController: UITableViewController {
         let cell: DictionaryTableViewCell = tableView.dequeueReusableCell(withIdentifier: "DictonaryCell", for: indexPath) as! DictionaryTableViewCell
 
         // Configure the cell...
-        cell.englishTitle.text = dataArray[indexPath.row].englishTitle
-        cell.chineseTitle.text = dataArray[indexPath.row].chineseTitle
+        //cell.englishTitle.text = dataArray[indexPath.row].englishTitle
+        //cell.chineseTitle.text = dataArray[indexPath.row].chineseTitle
         cell.explainLable.text = dataArray[indexPath.row].explain
 
         return cell
