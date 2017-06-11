@@ -26,6 +26,8 @@ class TableViewController: UITableViewController {
         var dataArray = [dic1, dic2, dic3]
         return dataArray
     }()
+    
+    //var htmlString: String
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +49,12 @@ class TableViewController: UITableViewController {
         //
         let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_C"
         request(httpUrl: urlString)
+        
+        // 
+        let cinema = "Are we going to the cinema at 3 pm or 5 pm?"
+        print(listMatches(pattern: "\\d (am|pm)", inString: cinema))
+        print(listGroups(pattern: "(\\d (am|pm))", inString: cinema))
+        
 
     }
 
@@ -74,9 +82,56 @@ class TableViewController: UITableViewController {
                 // NSData转String
                 let dataString = (NSString(data: data!, encoding: String.Encoding.utf8.rawValue))! as String
                 print("//prints:\n data:\(dataString)")
+                // 匹配html tag--<table>
+                //let pattern = "<([a-z][a-z0-9]*)\\b[^>]*>(.*?)</\\1>"
+                //let pattern = "<(tr)>([\\s\\S]*?)</\\1>" // 正解
+                let tablePattern = "<(table)\\b class=\"wikitable\">([\\s\\S]*?)</\\1>"
+                let tableArray: [String] = self.listMatches(pattern: tablePattern, inString: dataString)
+                print("matchTag:\(tableArray)")
+                // 匹配html tag--<tr>
+                let tableString: String? = tableArray.first
+                print("tableString: \(tableString)")
+                let trPattern = "<(tr)>([\\s\\S]*?)</\\1>"
+                let trArray: [String]? = self.listMatches(pattern: trPattern, inString: (tableString)!)
+                print("trArray: \(trArray)")
+                // 匹配html tag--<td>
             }
         }
         dataTask.resume()
+    }
+    
+    
+    /// 正则表达式
+    // 匹配字符串
+    func listMatches(pattern: String, inString string: String) -> [String] {
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        let range = NSMakeRange(0, string.characters.count)
+        let matches = regex.matches(in: string, options: [], range: range)
+        
+        return matches.map {
+            let range = $0.range
+            let matchString = (string as NSString).substring(with: range)
+            //print("matchString: \(matchString)")
+            return matchString
+        }
+    }
+    
+    //
+    func listGroups(pattern: String, inString string: String) -> [String] {
+        let regex = try! NSRegularExpression(pattern: pattern, options: [])
+        let range = NSMakeRange(0, string.characters.count)
+        let matches = regex.matches(in: string, options: [], range: range)
+        
+        var groupMatches = [String]()
+        for match in matches {
+            let rangeCount = match.numberOfRanges
+            for group in 0..<rangeCount {
+                let matchString = (string as NSString).substring(with: match.rangeAt(group))
+                groupMatches.append(matchString)
+            }
+        }
+        
+        return groupMatches
     }
     
 
