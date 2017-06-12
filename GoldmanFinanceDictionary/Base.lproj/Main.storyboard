@@ -14,42 +14,11 @@
         <scene sceneID="vMu-Jn-rhN">
             <objects>
                 <tableViewController id="O8r-pJ-s78" customClass="TableViewController" customModule="GoldmanFinanceDictionary" customModuleProvider="target" sceneMemberID="viewController">
-<<<<<<< HEAD
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZrJ-Js-jd4">
-=======
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZrJ-Js-jd4">
->>>>>>> f7f2ea095dfcd374bb334f856fbd8db7dd4c1ceb
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-<<<<<<< HEAD
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DictonaryCell" rowHeight="72" id="eLr-Go-DOx" customClass="DictionaryTableViewCell" customModule="GoldmanFinanceDictionary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eLr-Go-DOx" id="av6-AL-6da">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96A-1O-72E" userLabel="BackgroundView">
-                                            <rect key="frame" x="18" y="18" width="339" height="35.5"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Explain" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYp-EK-ZIt">
-                                                    <rect key="frame" x="8" y="8" width="323" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ZYp-EK-ZIt" secondAttribute="trailing" constant="8" id="NUk-3w-7DD"/>
-                                                <constraint firstItem="ZYp-EK-ZIt" firstAttribute="leading" secondItem="96A-1O-72E" secondAttribute="leading" constant="8" id="Np8-ff-oc1"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZYp-EK-ZIt" secondAttribute="bottom" constant="8" id="bLb-uW-aMX"/>
-                                                <constraint firstItem="ZYp-EK-ZIt" firstAttribute="top" secondItem="96A-1O-72E" secondAttribute="top" constant="8" id="fju-Gl-pYc"/>
-                                            </constraints>
-                                        </view>
-=======
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DictonaryCell" rowHeight="111" id="eLr-Go-DOx" customClass="DictionaryTableViewCell" customModule="GoldmanFinanceDictionary" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -75,7 +44,6 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
->>>>>>> f7f2ea095dfcd374bb334f856fbd8db7dd4c1ceb
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ZYp-EK-ZIt" firstAttribute="top" secondItem="XrE-T4-o6x" secondAttribute="bottom" constant="8" id="HfD-d8-MlT"/>

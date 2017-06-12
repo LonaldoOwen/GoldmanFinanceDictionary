@@ -53,7 +53,7 @@ class TableViewController: UITableViewController {
         // 
         let cinema = "Are we going to the cinema at 3 pm or 5 pm?"
         print(listMatches(pattern: "\\d (am|pm)", inString: cinema))
-        print(listGroups(pattern: "(\\d (am|pm))", inString: cinema))
+        //print(listGroups(pattern: "(\\d (am|pm))", inString: cinema))
         
 
     }
@@ -83,18 +83,34 @@ class TableViewController: UITableViewController {
                 let dataString = (NSString(data: data!, encoding: String.Encoding.utf8.rawValue))! as String
                 print("//prints:\n data:\(dataString)")
                 // 匹配html tag--<table>
-                //let pattern = "<([a-z][a-z0-9]*)\\b[^>]*>(.*?)</\\1>"
-                //let pattern = "<(tr)>([\\s\\S]*?)</\\1>" // 正解
                 let tablePattern = "<(table)\\b class=\"wikitable\">([\\s\\S]*?)</\\1>"
                 let tableArray: [String] = self.listMatches(pattern: tablePattern, inString: dataString)
                 print("matchTag:\(tableArray)")
                 // 匹配html tag--<tr>
-                let tableString: String? = tableArray.first
-                print("tableString: \(tableString)")
+                let tableTagString: String = tableArray.first!
+                print("tableTagString: \(tableTagString)")
                 let trPattern = "<(tr)>([\\s\\S]*?)</\\1>"
-                let trArray: [String]? = self.listMatches(pattern: trPattern, inString: (tableString)!)
+                let trArray: [String] = self.listMatches(pattern: trPattern, inString: (tableTagString))
                 print("trArray: \(trArray)")
+                print("first tr: \(trArray.first)")
                 // 匹配html tag--<td>
+                for trTag in trArray {
+                    if trTag != trArray[0] {
+                        let tdPattern = "<(td)>([\\s\\S]*?)</\\1>"
+                        let tdArray: [String] = self.listMatches(pattern: tdPattern, inString: trTag)
+                        print("tdArray: \(tdArray)")
+                        //   从tdTag中抓取字符
+                        if tdArray[0].characters.count > 0 {
+                            let englishPattern = ""
+                        }
+                        if tdArray[1].characters.count > 0 {
+                            
+                        }
+                        if tdArray[2].characters.count > 0 {
+                            
+                        }
+                    }
+                }
             }
         }
         dataTask.resume()
@@ -116,23 +132,7 @@ class TableViewController: UITableViewController {
         }
     }
     
-    //
-    func listGroups(pattern: String, inString string: String) -> [String] {
-        let regex = try! NSRegularExpression(pattern: pattern, options: [])
-        let range = NSMakeRange(0, string.characters.count)
-        let matches = regex.matches(in: string, options: [], range: range)
-        
-        var groupMatches = [String]()
-        for match in matches {
-            let rangeCount = match.numberOfRanges
-            for group in 0..<rangeCount {
-                let matchString = (string as NSString).substring(with: match.rangeAt(group))
-                groupMatches.append(matchString)
-            }
-        }
-        
-        return groupMatches
-    }
+    
     
 
     // MARK: - Table view data source
@@ -153,8 +153,8 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DictonaryCell") as! DictionaryTableViewCell
 
         // Configure the cell...
-        //cell.englishTitle.text = dataArray[indexPath.row].englishTitle
-        //cell.chineseTitle.text = dataArray[indexPath.row].chineseTitle
+        cell.englishTitle.text = dataArray[indexPath.row].englishTitle
+        cell.chineseTitle.text = dataArray[indexPath.row].chineseTitle
         cell.explainLable.text = dataArray[indexPath.row].explain
 
         return cell
