@@ -11,21 +11,24 @@ import UIKit
 class TableViewController: UITableViewController {
     
     //
-    struct GoldmanFinanceDictionary {
+    struct GoldmanFinanceDictionaryModel {
         var englishTitle: String
         var chineseTitle: String
         var explain: String
         
     }
     
-    let dataArray: [GoldmanFinanceDictionary] = {
+    let dataArray: [GoldmanFinanceDictionaryModel] = {
         // 构造数据
-        let dic1 = GoldmanFinanceDictionary(englishTitle: "DJIA", chineseTitle: "道琼斯工业平均指数", explain: "道琼斯工业平均指数是30种在纽约股票交易所及纳斯达克交易所买卖的重要股票的股价加权平均。道琼斯工业平均指数于1896年由Charles Dow 始创")
-        let dic2 = GoldmanFinanceDictionary(englishTitle: "Data Mining", chineseTitle: "数据探索", explain: "一种数据库应用，旨在探索大量数据之中存在的潜在模式")
-        let dic3 = GoldmanFinanceDictionary(englishTitle: "Days Payable Outstanding(DPO)", chineseTitle: "应付账款天数", explain: "公司付款的平均天数;备注：公式也可以作：应收账款/（信用成本/天数）")
+        let dic1 = GoldmanFinanceDictionaryModel(englishTitle: "DJIA", chineseTitle: "道琼斯工业平均指数", explain: "道琼斯工业平均指数是30种在纽约股票交易所及纳斯达克交易所买卖的重要股票的股价加权平均。道琼斯工业平均指数于1896年由Charles Dow 始创")
+        let dic2 = GoldmanFinanceDictionaryModel(englishTitle: "Data Mining", chineseTitle: "数据探索", explain: "一种数据库应用，旨在探索大量数据之中存在的潜在模式")
+        let dic3 = GoldmanFinanceDictionaryModel(englishTitle: "Days Payable Outstanding(DPO)", chineseTitle: "应付账款天数", explain: "公司付款的平均天数;备注：公式也可以作：应收账款/（信用成本/天数）")
         var dataArray = [dic1, dic2, dic3]
         return dataArray
     }()
+    var trStrings: [[String]] = []
+    var tdStrings: [String] = []
+    var dataModels: [GoldmanFinanceDictionaryModel] = []
     
     //var htmlString: String
 
@@ -49,11 +52,7 @@ class TableViewController: UITableViewController {
         //
         let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_C"
         request(httpUrl: urlString)
-        
-        // 
-        let cinema = "Are we going to the cinema at 3 pm or 5 pm?"
-        print(listMatches(pattern: "\\d (am|pm)", inString: cinema))
-        //print(listGroups(pattern: "(\\d (am|pm))", inString: cinema))
+        print("self.trStrings: \(self.tdStrings)")
         
 
     }
@@ -99,24 +98,44 @@ class TableViewController: UITableViewController {
                         let tdPattern = "<(td)>([\\s\\S]*?)</\\1>"
                         let tdArray: [String] = self.listMatches(pattern: tdPattern, inString: trTag)
                         //print("tdArray: \(tdArray)")
-                        for tdTag in tdArray {
+                        var tdStrings: [String] = []
+                        for (index, tdTag) in tdArray.enumerated() {
                             //   从tdTag中抓取字符
-                            
-                            if tdTag == tdArray[0] {
+                            if index == 0 {
                                 var tdEnglishResult = self.listMatches(pattern: ">[([(\\w+)-])(\\s+)]+<", inString: tdTag)
                                 tdEnglishResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdEnglishResult[0])
                                 print("tdEnglishResult: \(tdEnglishResult)")
+                                tdStrings.append(tdEnglishResult[0])
                             }
-                            if tdTag == tdArray[1] {
-                                
+                            if index == 1 {
+                                var tdChineseResult = self.listMatches(pattern: ">[([(\\w+（）)，-])(\\s+)]+<", inString: tdTag)
+                                tdChineseResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdChineseResult[0])
+                                tdStrings.append(tdChineseResult[0])
+                                //tdStrings.append("1")
                             }
-                            if tdTag == tdArray[2] {
-                                
+                            if index == 2 {
+                                let tdExplainArray = self.listMatches(pattern: "[\u{4e00}-\u{9fa5}]+([，。、；]*)[\u{4e00}-\u{9fa5}]+", inString: tdTag)
+                                var tdExplainResult: String = ""
+                                for string in tdExplainArray {
+                                    tdExplainResult.append(string)
+                                }
+                                tdStrings.append(tdExplainResult)
+                                //tdStrings.append("2")
                             }
-
+                            
                         }
-                        
+                        self.trStrings.append(tdStrings)
                     }
+                }
+                // 构造数据模型
+                print("self.trStrings: \(self.tdStrings)")
+                for tdStrings in self.trStrings {
+                    let dataModel = GoldmanFinanceDictionaryModel(englishTitle: tdStrings[0], chineseTitle: tdStrings[1], explain: tdStrings[2])
+                    self.dataModels.append(dataModel)
+                }
+                // 返回主线程更新tableView
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -151,7 +170,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return dataArray.count
+        return self.dataModels.count
     }
 
     
@@ -160,9 +179,12 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DictonaryCell") as! DictionaryTableViewCell
 
         // Configure the cell...
-        cell.englishTitle.text = dataArray[indexPath.row].englishTitle
-        cell.chineseTitle.text = dataArray[indexPath.row].chineseTitle
-        cell.explainLable.text = dataArray[indexPath.row].explain
+//        cell.englishTitle.text = dataArray[indexPath.row].englishTitle
+//        cell.chineseTitle.text = dataArray[indexPath.row].chineseTitle
+//        cell.explainLable.text = dataArray[indexPath.row].explain
+        cell.englishTitle.text = self.dataModels[indexPath.row].englishTitle
+        cell.chineseTitle.text = self.dataModels[indexPath.row].chineseTitle
+        cell.explainLable.text = self.dataModels[indexPath.row].explain
 
         return cell
     }
