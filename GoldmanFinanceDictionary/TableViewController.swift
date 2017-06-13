@@ -17,7 +17,7 @@ class TableViewController: UITableViewController {
         var explain: String
         
     }
-    
+    /*
     let dataArray: [GoldmanFinanceDictionaryModel] = {
         // 构造数据
         let dic1 = GoldmanFinanceDictionaryModel(englishTitle: "DJIA", chineseTitle: "道琼斯工业平均指数", explain: "道琼斯工业平均指数是30种在纽约股票交易所及纳斯达克交易所买卖的重要股票的股价加权平均。道琼斯工业平均指数于1896年由Charles Dow 始创")
@@ -26,8 +26,8 @@ class TableViewController: UITableViewController {
         var dataArray = [dic1, dic2, dic3]
         return dataArray
     }()
+    */
     var trStrings: [[String]] = []
-    var tdStrings: [String] = []
     var dataModels: [GoldmanFinanceDictionaryModel] = []
     
     //var htmlString: String
@@ -49,10 +49,10 @@ class TableViewController: UITableViewController {
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        //
+        // 获取HTML源码
         let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_C"
         request(httpUrl: urlString)
-        print("self.trStrings: \(self.tdStrings)")
+        print("self.trStrings: \(self.trStrings)")
         
 
     }
@@ -128,7 +128,6 @@ class TableViewController: UITableViewController {
                     }
                 }
                 // 构造数据模型
-                print("self.trStrings: \(self.tdStrings)")
                 for tdStrings in self.trStrings {
                     let dataModel = GoldmanFinanceDictionaryModel(englishTitle: tdStrings[0], chineseTitle: tdStrings[1], explain: tdStrings[2])
                     self.dataModels.append(dataModel)
@@ -143,7 +142,7 @@ class TableViewController: UITableViewController {
     }
     
     
-    /// 正则表达式
+    // MARK--helper 正则表达式
     // 匹配字符串
     func listMatches(pattern: String, inString string: String) -> [String] {
         let regex = try! NSRegularExpression(pattern: pattern, options: [])
