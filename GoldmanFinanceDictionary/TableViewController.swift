@@ -78,37 +78,44 @@ class TableViewController: UITableViewController {
             if error != nil {
                 print("error")
             } else {
-                print("//prints:\n response:\(response)")
+                //print("//prints:\n response:\(response)")
                 // NSData转String
                 let dataString = (NSString(data: data!, encoding: String.Encoding.utf8.rawValue))! as String
-                print("//prints:\n data:\(dataString)")
+                //print("//prints:\n data:\(dataString)")
                 // 匹配html tag--<table>
                 let tablePattern = "<(table)\\b class=\"wikitable\">([\\s\\S]*?)</\\1>"
                 let tableArray: [String] = self.listMatches(pattern: tablePattern, inString: dataString)
-                print("matchTag:\(tableArray)")
+                //print("matchTag:\(tableArray)")
                 // 匹配html tag--<tr>
                 let tableTagString: String = tableArray.first!
-                print("tableTagString: \(tableTagString)")
+                //print("tableTagString: \(tableTagString)")
                 let trPattern = "<(tr)>([\\s\\S]*?)</\\1>"
                 let trArray: [String] = self.listMatches(pattern: trPattern, inString: (tableTagString))
-                print("trArray: \(trArray)")
-                print("first tr: \(trArray.first)")
+                //print("trArray: \(trArray)")
+                //print("first tr: \(trArray.first)")
                 // 匹配html tag--<td>
                 for trTag in trArray {
                     if trTag != trArray[0] {
                         let tdPattern = "<(td)>([\\s\\S]*?)</\\1>"
                         let tdArray: [String] = self.listMatches(pattern: tdPattern, inString: trTag)
-                        print("tdArray: \(tdArray)")
-                        //   从tdTag中抓取字符
-                        if tdArray[0].characters.count > 0 {
-                            let englishPattern = ""
-                        }
-                        if tdArray[1].characters.count > 0 {
+                        //print("tdArray: \(tdArray)")
+                        for tdTag in tdArray {
+                            //   从tdTag中抓取字符
                             
+                            if tdTag == tdArray[0] {
+                                var tdEnglishResult = self.listMatches(pattern: ">[([(\\w+)-])(\\s+)]+<", inString: tdTag)
+                                tdEnglishResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdEnglishResult[0])
+                                print("tdEnglishResult: \(tdEnglishResult)")
+                            }
+                            if tdTag == tdArray[1] {
+                                
+                            }
+                            if tdTag == tdArray[2] {
+                                
+                            }
+
                         }
-                        if tdArray[2].characters.count > 0 {
-                            
-                        }
+                        
                     }
                 }
             }
