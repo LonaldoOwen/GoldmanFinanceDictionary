@@ -114,10 +114,11 @@ class TableViewController: UITableViewController {
                                 //tdStrings.append("1")
                             }
                             if index == 2 {
-                                let tdExplainArray = self.listMatches(pattern: "[\u{4e00}-\u{9fa5}]+([，。、；]*)[\u{4e00}-\u{9fa5}]+", inString: tdTag)
+                                let tdExplainArray = self.listMatches(pattern: ">(.*?)<", inString: tdTag)
                                 var tdExplainResult: String = ""
                                 for string in tdExplainArray {
-                                    tdExplainResult.append(string)
+                                    let result = self.listMatches(pattern: "[^>].*[^<]", inString: string)
+                                    tdExplainResult.append(result[0])
                                 }
                                 tdStrings.append(tdExplainResult)
                                 //tdStrings.append("2")
