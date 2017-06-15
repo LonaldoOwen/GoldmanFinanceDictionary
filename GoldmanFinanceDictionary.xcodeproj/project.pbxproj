@@ -16,6 +16,8 @@
 		23301DB51EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DB41EE6CDC600C5DD7E /* GoldmanFinanceDictionaryUITests.swift */; };
 		23301DC31EE6D10900C5DD7E /* DictionaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DC21EE6D10900C5DD7E /* DictionaryTableViewCell.swift */; };
 		23301DC51EE6D14500C5DD7E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DC41EE6D14500C5DD7E /* TableViewController.swift */; };
+		5A3B8FE61EF2C66B00D67C08 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B8FE51EF2C66B00D67C08 /* DictionaryViewController.swift */; };
+		5A3B8FE81EF2C6A600D67C08 /* DictionaryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B8FE71EF2C6A600D67C08 /* DictionaryPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		23301DB61EE6CDC600C5DD7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23301DC21EE6D10900C5DD7E /* DictionaryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTableViewCell.swift; sourceTree = "<group>"; };
 		23301DC41EE6D14500C5DD7E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		5A3B8FE51EF2C66B00D67C08 /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryViewController.swift; path = ../DictionaryViewController.swift; sourceTree = "<group>"; };
+		5A3B8FE71EF2C6A600D67C08 /* DictionaryPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryPageViewController.swift; path = ../DictionaryPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				23301D941EE6CDC600C5DD7E /* AppDelegate.swift */,
 				23301D961EE6CDC600C5DD7E /* ViewController.swift */,
 				23301D981EE6CDC600C5DD7E /* Main.storyboard */,
+				5A3B8FE51EF2C66B00D67C08 /* DictionaryViewController.swift */,
+				5A3B8FE71EF2C6A600D67C08 /* DictionaryPageViewController.swift */,
 				23301DC41EE6D14500C5DD7E /* TableViewController.swift */,
 				23301DC21EE6D10900C5DD7E /* DictionaryTableViewCell.swift */,
 				23301D9B1EE6CDC600C5DD7E /* Assets.xcassets */,
@@ -268,10 +274,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A3B8FE61EF2C66B00D67C08 /* DictionaryViewController.swift in Sources */,
 				23301D971EE6CDC600C5DD7E /* ViewController.swift in Sources */,
 				23301D951EE6CDC600C5DD7E /* AppDelegate.swift in Sources */,
 				23301DC31EE6D10900C5DD7E /* DictionaryTableViewCell.swift in Sources */,
 				23301DC51EE6D14500C5DD7E /* TableViewController.swift in Sources */,
+				5A3B8FE81EF2C6A600D67C08 /* DictionaryPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

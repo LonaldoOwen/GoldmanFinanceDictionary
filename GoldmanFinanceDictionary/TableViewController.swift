@@ -49,8 +49,8 @@ class TableViewController: UITableViewController {
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        // 获取HTML源码
-        let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_C"
+        // 获取HTML源码(可用：C、G)
+        let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_G"
         request(httpUrl: urlString)
         print("self.trStrings: \(self.trStrings)")
         
