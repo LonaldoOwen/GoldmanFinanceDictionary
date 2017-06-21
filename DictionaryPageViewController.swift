@@ -9,7 +9,11 @@
 import UIKit
 
 class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDataSource {
+    
+    //
+    var pageCount: Int = 1
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,7 +41,10 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
     // MARK: data source
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         print("viewControllerAfter")
-        let afterPageVC: TableViewController = viewController as! TableViewController
+        // switch label切换到下一个
+        
+        // 返回下一个pageVC
+        let currentPageVC: TableViewController = viewController as! TableViewController
         //let afterPageVC: ViewController = viewController as! ViewController
 //        guard let vcIndex = viewControllers?.index(of: afterPageVC) else {
 //            return nil
@@ -47,16 +54,24 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
 //        }
 //        print("after: \(vcIndex)")
 //        return nil
-        var index = afterPageVC.pageIndex
-        if index == NSNotFound || index == 3 {
+        var index = currentPageVC.pageIndex
+        if index == NSNotFound || index == pageCount-1 {
             return nil
         }
         index += 1
+        // 更新index button
+        print("after: \(index)")
+//        let dicVC: DictionaryViewController = pageViewController.parent as! DictionaryViewController
+//        dicVC.updateIndexButton(of: index)
         return self.loadVC(withPage: index)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let beforePageVC: TableViewController = viewController as! TableViewController
+        
+        // switch label切换到上一个
+        
+        // 返回上一个pageVC
+        let currentPageVC: TableViewController = viewController as! TableViewController
 //        guard let vcIndex = viewControllers?.index(of: beforePageVC) else {
 //            return nil
 //        }
@@ -65,32 +80,36 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
 //        }
 //        print("before: \(vcIndex)")
 //        return nil
-        var index = beforePageVC.pageIndex
+        var index = currentPageVC.pageIndex
         if index == 0 || index == NSNotFound {
             return nil
         }
         index -= 1
+        //
+        print("before: \(index)")
+//        let dicVC: DictionaryViewController = pageViewController.parent as! DictionaryViewController
+//        dicVC.updateIndexButton(of: index)
         return self.loadVC(withPage: index)
     }
     
-    // 实现indicator（小圆点）
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return 3
-    }
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 0
-    }
+    
+    // MARK：实现indicator（小圆点）
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return 3
+//    }
+//
+//func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        return 0
+//    }
     
     
     //
     func loadVC(withPage page: Int) -> UIViewController {
         let listVC: TableViewController = storyboard?.instantiateViewController(withIdentifier: "ListVC") as! TableViewController
         listVC.pageIndex = page
+        let dicVC: DictionaryViewController = self.parent as! DictionaryViewController
+        dicVC.updateIndexButton(of: page)
         return listVC
-//        let detailVC: ViewController = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! ViewController
-//        if page == 1 { detailVC.view.backgroundColor = UIColor.red}
-//        if page == 2 { detailVC.view.backgroundColor = UIColor.blue}
-//        return detailVC
     }
     
 
