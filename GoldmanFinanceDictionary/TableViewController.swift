@@ -17,6 +17,8 @@ class TableViewController: UITableViewController {
         var explain: String
         
     }
+    var pageIndex: Int = 0
+    
     /*
     let dataArray: [GoldmanFinanceDictionaryModel] = {
         // 构造数据
@@ -52,7 +54,7 @@ class TableViewController: UITableViewController {
         // 获取HTML源码(可用：C、G)
         let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_G"
         request(httpUrl: urlString)
-        print("self.trStrings: \(self.trStrings)")
+        //print("self.trStrings: \(self.trStrings)")
         
 
     }
@@ -104,7 +106,7 @@ class TableViewController: UITableViewController {
                             if index == 0 {
                                 var tdEnglishResult = self.listMatches(pattern: ">[([(\\w+)-])(\\s+)]+<", inString: tdTag)
                                 tdEnglishResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdEnglishResult[0])
-                                print("tdEnglishResult: \(tdEnglishResult)")
+                                //print("tdEnglishResult: \(tdEnglishResult)")
                                 tdStrings.append(tdEnglishResult[0])
                             }
                             if index == 1 {

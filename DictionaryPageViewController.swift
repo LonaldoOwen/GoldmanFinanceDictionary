@@ -18,7 +18,14 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
         //
         view.backgroundColor = UIColor.orange
         // 设置初始page
-        self.setViewControllers([loadVC(withPage: 0)], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
+        self.setViewControllers([loadVC(withPage: 0)], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+        dataSource = self
+        /**
+         transitionStyle\navigationOrientation
+         注意：1、如果使用storyboard，需要在storyboard设置；2、如果使用代码，初始化UIPageViewController实例时创建
+        */
+        //self.transitionStyle = UIPageViewControllerTransitionStyle.scroll
+        //self.navigationOrientation = UIPageViewControllerNavigationOrientation.horizontal
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,27 +33,64 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
         // Dispose of any resources that can be recreated.
     }
     
-    //
+    
+    // MARK: data source
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let currentPageVC = pageViewController
-        guard let vcIndex = viewControllers?.index(of: currentPageVC) else {
+        print("viewControllerAfter")
+        let afterPageVC: TableViewController = viewController as! TableViewController
+        //let afterPageVC: ViewController = viewController as! ViewController
+//        guard let vcIndex = viewControllers?.index(of: afterPageVC) else {
+//            return nil
+//        }
+//        if vcIndex < 3 - 1 {
+//            return self.loadVC(withPage: vcIndex+1)
+//        }
+//        print("after: \(vcIndex)")
+//        return nil
+        var index = afterPageVC.pageIndex
+        if index == NSNotFound || index == 3 {
             return nil
         }
-        if vcIndex < (viewControllers?.count)! - 1 {
-            return self.loadVC(withPage: vcIndex+1)
-        }
-        return nil
+        index += 1
+        return self.loadVC(withPage: index)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return nil
+        let beforePageVC: TableViewController = viewController as! TableViewController
+//        guard let vcIndex = viewControllers?.index(of: beforePageVC) else {
+//            return nil
+//        }
+//        if vcIndex > 0 {
+//            return self.loadVC(withPage: vcIndex-1)
+//        }
+//        print("before: \(vcIndex)")
+//        return nil
+        var index = beforePageVC.pageIndex
+        if index == 0 || index == NSNotFound {
+            return nil
+        }
+        index -= 1
+        return self.loadVC(withPage: index)
+    }
+    
+    // 实现indicator（小圆点）
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return 3
+    }
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
     }
     
     
     //
-    func loadVC(withPage page: Int) -> UITableViewController {
+    func loadVC(withPage page: Int) -> UIViewController {
         let listVC: TableViewController = storyboard?.instantiateViewController(withIdentifier: "ListVC") as! TableViewController
+        listVC.pageIndex = page
         return listVC
+//        let detailVC: ViewController = storyboard?.instantiateViewController(withIdentifier: "DetailVC") as! ViewController
+//        if page == 1 { detailVC.view.backgroundColor = UIColor.red}
+//        if page == 2 { detailVC.view.backgroundColor = UIColor.blue}
+//        return detailVC
     }
     
 

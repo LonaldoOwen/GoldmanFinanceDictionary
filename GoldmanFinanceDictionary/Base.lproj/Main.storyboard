@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7a-fW-1s3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O7a-fW-1s3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -75,7 +75,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEP-e0-OAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="805.54722638680664"/>
+            <point key="canvasLocation" x="926" y="886"/>
         </scene>
         <!--Dictionary View Controller-->
         <scene sceneID="zaL-kg-vqs">
@@ -98,10 +98,28 @@
         <!--Dictionary Page View Controller-->
         <scene sceneID="0lF-YM-N2a">
             <objects>
-                <pageViewController storyboardIdentifier="DicPageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="0q7-R2-IZK" customClass="DictionaryPageViewController" customModule="GoldmanFinanceDictionary" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="DicPageVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="0q7-R2-IZK" customClass="DictionaryPageViewController" customModule="GoldmanFinanceDictionary" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7le-xE-Lya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1058" y="117"/>
+            <point key="canvasLocation" x="905" y="116"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Y8L-x9-ecE">
+            <objects>
+                <viewController storyboardIdentifier="DetailVC" id="p1T-eC-HOQ" customClass="ViewController" customModule="GoldmanFinanceDictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ghf-Pi-Kda"/>
+                        <viewControllerLayoutGuide type="bottom" id="GDD-LV-XQs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="guI-QF-tIF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10a-EV-FDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1642" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BwS-Rd-qgI">
@@ -116,7 +134,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTV-5V-jNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176.80000000000001" y="805.54722638680664"/>
+            <point key="canvasLocation" x="162" y="896"/>
         </scene>
     </scenes>
 </document>
