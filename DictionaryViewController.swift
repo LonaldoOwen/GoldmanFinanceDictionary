@@ -94,6 +94,7 @@ class DictionaryViewController: UIViewController {
         pageVC.setViewControllers([pageVC.loadVC(withPage: button.tag-10)], direction: .forward, animated: false, completion: nil)
     }
     
+    // 切换switch button
     func updateIndexButton(of index: Int) {
         print("index: \(index)")
         for (id, subBtn) in topScrollView.subviews.enumerated() {
