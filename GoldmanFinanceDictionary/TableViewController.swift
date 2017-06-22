@@ -52,7 +52,7 @@ class TableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         // 获取HTML源码(可用：C、G)
-        let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_G"
+        let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_B"
         request(httpUrl: urlString)
         //print("self.trStrings: \(self.trStrings)")
         
@@ -103,29 +103,38 @@ class TableViewController: UITableViewController {
                         var tdStrings: [String] = []
                         for (index, tdTag) in tdArray.enumerated() {
                             //   从tdTag中抓取字符
-                            if index == 0 {
-                                var tdEnglishResult = self.listMatches(pattern: ">[([(\\w+)-])(\\s+)]+<", inString: tdTag)
-                                tdEnglishResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdEnglishResult[0])
-                                //print("tdEnglishResult: \(tdEnglishResult)")
-                                tdStrings.append(tdEnglishResult[0])
+//                            if index == 0 {
+//                                var tdEnglishResult = self.listMatches(pattern: ">[([(\\w+)-])(\\s+)]+<", inString: tdTag)
+//                                tdEnglishResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdEnglishResult[0])
+//                                //print("tdEnglishResult: \(tdEnglishResult)")
+//                                tdStrings.append(tdEnglishResult[0])
+//                            }
+//                            if index == 1 {
+//                                var tdChineseResult = self.listMatches(pattern: ">[([(\\w+（）)，-])(\\s+)]+<", inString: tdTag)
+//                                tdChineseResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdChineseResult[0])
+//                                tdStrings.append(tdChineseResult[0])
+//                                //tdStrings.append("1")
+//                            }
+//                            if index == 2 {
+//                                let tdExplainArray = self.listMatches(pattern: "(?<=>).*?(?=<)|(?<=>).*?(?=\\n)", inString: tdTag)
+//                                var tdExplainResult: String = ""
+//                                for string in tdExplainArray {
+//                                    //let result = self.listMatches(pattern: "(?<=>).*(?=<)", inString: string)
+//                                    //tdExplainResult.append(result[0])
+//                                    tdExplainResult.append(string)
+//                                }
+//                                tdStrings.append(tdExplainResult)
+//                                //tdStrings.append("2")
+//                            }
+                            let tdExplainArray = self.listMatches(pattern: "(?<=>).*?(?=<)|(?<=>).*?(?=\\n)", inString: tdTag)
+                            var tdExplainResult: String = ""
+                            for string in tdExplainArray {
+                                //let result = self.listMatches(pattern: "(?<=>).*(?=<)", inString: string)
+                                //tdExplainResult.append(result[0])
+                                tdExplainResult.append(string)
                             }
-                            if index == 1 {
-                                var tdChineseResult = self.listMatches(pattern: ">[([(\\w+（）)，-])(\\s+)]+<", inString: tdTag)
-                                tdChineseResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdChineseResult[0])
-                                tdStrings.append(tdChineseResult[0])
-                                //tdStrings.append("1")
-                            }
-                            if index == 2 {
-                                let tdExplainArray = self.listMatches(pattern: "(?<=>).*?(?=<)|(?<=>).*?(?=\\n)", inString: tdTag)
-                                var tdExplainResult: String = ""
-                                for string in tdExplainArray {
-                                    //let result = self.listMatches(pattern: "(?<=>).*(?=<)", inString: string)
-                                    //tdExplainResult.append(result[0])
-                                    tdExplainResult.append(string)
-                                }
-                                tdStrings.append(tdExplainResult)
-                                //tdStrings.append("2")
-                            }
+                            tdStrings.append(tdExplainResult)
+
                             
                         }
                         self.trStrings.append(tdStrings)
