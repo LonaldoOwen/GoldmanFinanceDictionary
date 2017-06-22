@@ -26,7 +26,7 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
         dataSource = self
         delegate = self
         /**
-         transitionStyle\navigationOrientation
+         transitionStyle\navigationOrientation（getter）
          注意：1、如果使用storyboard，需要在storyboard设置；2、如果使用代码，初始化UIPageViewController实例时创建
         */
         //self.transitionStyle = UIPageViewControllerTransitionStyle.scroll
@@ -41,26 +41,19 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
     
     // MARK: data source
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        print("viewControllerAfter")
-        // switch label切换到下一个
         
-        // 返回下一个pageVC
+        // 进入下一个pageVC
         let currentPageVC: TableViewController = viewController as! TableViewController
         var index = currentPageVC.pageIndex
         if index == NSNotFound || index == pageCount-1 {
             return nil
         }
         index += 1
-        // 更新index button
-        print("after: \(index)")
-//        let dicVC: DictionaryViewController = pageViewController.parent as! DictionaryViewController
-//        dicVC.updateIndexButton(of: index)
+
         return self.loadVC(withPage: index)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        // switch label切换到上一个
         
         // 返回上一个pageVC
         let currentPageVC: TableViewController = viewController as! TableViewController
@@ -69,10 +62,7 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
             return nil
         }
         index -= 1
-        //
-        print("before: \(index)")
-//        let dicVC: DictionaryViewController = pageViewController.parent as! DictionaryViewController
-//        dicVC.updateIndexButton(of: index)
+
         return self.loadVC(withPage: index)
     }
     
@@ -89,11 +79,18 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
     
     // MARK: delegate
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        
         print("willTransitionTo, \(pendingViewControllers.count)")
+        
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
         print("didFinishAnimating, \(previousViewControllers.count)")
+        // 切换switch button
+        let dicVC: DictionaryViewController = pageViewController.parent as! DictionaryViewController
+        let index = (pageViewController.viewControllers?[0] as! TableViewController).pageIndex
+        dicVC.updateIndexButton(of: index)
     }
     
     
@@ -101,9 +98,6 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
     func loadVC(withPage page: Int) -> UIViewController {
         let listVC: TableViewController = storyboard?.instantiateViewController(withIdentifier: "ListVC") as! TableViewController
         listVC.pageIndex = page
-        // 
-        let dicVC: DictionaryViewController = self.parent as! DictionaryViewController
-        dicVC.updateIndexButton(of: page)
         return listVC
     }
     

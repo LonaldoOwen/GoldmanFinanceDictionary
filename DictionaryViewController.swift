@@ -31,7 +31,6 @@ class DictionaryViewController: UIViewController {
         topScrollView.showsVerticalScrollIndicator = false
     
         // 添加page view
-        //let pageVC: DictionaryPageViewController = storyboard?.instantiateViewController(withIdentifier: "DicPageVC") as! DictionaryPageViewController
         pageVC = storyboard?.instantiateViewController(withIdentifier: "DicPageVC") as! DictionaryPageViewController
         self.addChildViewController(pageVC)
         pageVC.view.frame = CGRect(x: 0, y: 60+46, width: screanWidth, height: screanHeight-60-46)
@@ -82,14 +81,6 @@ class DictionaryViewController: UIViewController {
         let currentBtn: IndexButton = button as! IndexButton
         selectedIndex = topScrollView.subviews.index(of: currentBtn)!  // 获取当前点击button的index
         updateIndexButton(of: selectedIndex)
-//        for (index, subBtn) in topScrollView.subviews.enumerated() {
-//            if index == selectedIndex {
-//                currentBtn.scale = 1.0
-//            } else {
-//                let indexBtn: IndexButton = subBtn as! IndexButton
-//                indexBtn.scale = 0
-//            }
-//        }
         // 显示index对应的VC
         pageVC.setViewControllers([pageVC.loadVC(withPage: button.tag-10)], direction: .forward, animated: false, completion: nil)
     }
