@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Ji
 
 class TableViewController: UITableViewController {
     
@@ -17,6 +18,7 @@ class TableViewController: UITableViewController {
         var explain: String
         
     }
+    let nameArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "M", "N", "O", "P", "S", "T"];
     var pageIndex: Int = 0
     
     /*
@@ -52,10 +54,20 @@ class TableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         // 获取HTML源码(可用：C、G)
-        let urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_B"
-        request(httpUrl: urlString)
+        var urlString = "http://wiki.mbalib.com/wiki/%E9%AB%98%E7%9B%9B%E8%B4%A2%E7%BB%8F%E8%AF%8D%E5%85%B8%E8%8B%B1%E6%B1%89%E5%AF%B9%E7%85%A7_"
+        urlString = urlString.appending(nameArray[pageIndex])
+        
+        /// 使用request获取html源码，正则表达式解析
+        //request(httpUrl: urlString)
         //print("self.trStrings: \(self.trStrings)")
         
+        //／ 使用xml parser抓取html数据
+        getHtmlData(inUrl: URL(string: urlString)!, xPath: "//*[@id=\"bodyContent\"]/table")
+        print("")
+        // temp debug
+//        let jiDoc = Ji(htmlURL: URL(string: urlString)!)
+//        let tableNode = jiDoc?.xPath("//*[@id=\"bodyContent\"]/table")?.first
+//        print(tableNode)
 
     }
 
@@ -84,13 +96,14 @@ class TableViewController: UITableViewController {
                 let dataString = (NSString(data: data!, encoding: String.Encoding.utf8.rawValue))! as String
                 //print("//prints:\n data:\(dataString)")
                 // 匹配html tag--<table>
-                let tablePattern = "<(table)\\b class=\"wikitable\">([\\s\\S]*?)</\\1>"
+                let tablePattern = "<(table)\\b class=\"wikitable\">([\\s\\S]*?)</\\1>(([\\s\\S]*?)</\\1>)*"
                 let tableArray: [String] = self.listMatches(pattern: tablePattern, inString: dataString)
                 //print("matchTag:\(tableArray)")
                 // 匹配html tag--<tr>
                 let tableTagString: String = tableArray.first!
                 //print("tableTagString: \(tableTagString)")
-                let trPattern = "<(tr)>([\\s\\S]*?)</\\1>"
+                //let trPattern = "<(tr)>([\\s\\S]*?)</\\1>"
+                let trPattern = "<tr>\n(<td>([\\s\\S]*?)(<table>[\\s\\S].*?</table>)*?</td>)</tr>"
                 let trArray: [String] = self.listMatches(pattern: trPattern, inString: (tableTagString))
                 //print("trArray: \(trArray)")
                 //print("first tr: \(trArray.first)")
@@ -103,39 +116,12 @@ class TableViewController: UITableViewController {
                         var tdStrings: [String] = []
                         for (index, tdTag) in tdArray.enumerated() {
                             //   从tdTag中抓取字符
-//                            if index == 0 {
-//                                var tdEnglishResult = self.listMatches(pattern: ">[([(\\w+)-])(\\s+)]+<", inString: tdTag)
-//                                tdEnglishResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdEnglishResult[0])
-//                                //print("tdEnglishResult: \(tdEnglishResult)")
-//                                tdStrings.append(tdEnglishResult[0])
-//                            }
-//                            if index == 1 {
-//                                var tdChineseResult = self.listMatches(pattern: ">[([(\\w+（）)，-])(\\s+)]+<", inString: tdTag)
-//                                tdChineseResult = self.listMatches(pattern: "[^>].*[^<]", inString: tdChineseResult[0])
-//                                tdStrings.append(tdChineseResult[0])
-//                                //tdStrings.append("1")
-//                            }
-//                            if index == 2 {
-//                                let tdExplainArray = self.listMatches(pattern: "(?<=>).*?(?=<)|(?<=>).*?(?=\\n)", inString: tdTag)
-//                                var tdExplainResult: String = ""
-//                                for string in tdExplainArray {
-//                                    //let result = self.listMatches(pattern: "(?<=>).*(?=<)", inString: string)
-//                                    //tdExplainResult.append(result[0])
-//                                    tdExplainResult.append(string)
-//                                }
-//                                tdStrings.append(tdExplainResult)
-//                                //tdStrings.append("2")
-//                            }
                             let tdExplainArray = self.listMatches(pattern: "(?<=>).*?(?=<)|(?<=>).*?(?=\\n)", inString: tdTag)
                             var tdExplainResult: String = ""
                             for string in tdExplainArray {
-                                //let result = self.listMatches(pattern: "(?<=>).*(?=<)", inString: string)
-                                //tdExplainResult.append(result[0])
                                 tdExplainResult.append(string)
                             }
                             tdStrings.append(tdExplainResult)
-
-                            
                         }
                         self.trStrings.append(tdStrings)
                     }
@@ -152,6 +138,34 @@ class TableViewController: UITableViewController {
             }
         }
         dataTask.resume()
+    }
+    
+    
+    /// 解析html，获取数据
+    func getHtmlData(inUrl: URL, xPath: String) {
+        let jiDoc = Ji(htmlURL: inUrl)
+        let tableNode = jiDoc?.xPath(xPath)?.first
+        var dataModel = GoldmanFinanceDictionaryModel(englishTitle: "", chineseTitle: "", explain: "")
+        for tr in (tableNode?.children)! {
+            if tr != tableNode?.children.first {
+                // 过滤掉第一个tr
+                for (index, td) in tr.children.enumerated() {
+                    // 解析td，存入model
+                    if index == 0 {
+                        dataModel.englishTitle = td.content!
+                    }
+                    if index  == 1 {
+                        dataModel.chineseTitle = td.content!
+                    }
+                    if index == 2 {
+                        dataModel.explain = td.content!
+                    }
+                }
+                // 将model存入dataModels
+                self.dataModels.append(dataModel)
+            }
+        }
+        
     }
     
     
@@ -187,13 +201,8 @@ class TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "DictonaryCell", for: indexPath)
         let cell = tableView.dequeueReusableCell(withIdentifier: "DictonaryCell") as! DictionaryTableViewCell
-
         // Configure the cell...
-//        cell.englishTitle.text = dataArray[indexPath.row].englishTitle
-//        cell.chineseTitle.text = dataArray[indexPath.row].chineseTitle
-//        cell.explainLable.text = dataArray[indexPath.row].explain
         cell.englishTitle.text = self.dataModels[indexPath.row].englishTitle
         cell.chineseTitle.text = self.dataModels[indexPath.row].chineseTitle
         cell.explainLable.text = self.dataModels[indexPath.row].explain

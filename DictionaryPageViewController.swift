@@ -79,7 +79,6 @@ class DictionaryPageViewController: UIPageViewController, UIPageViewControllerDa
     
     // MARK: delegate
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        
         print("willTransitionTo, \(pendingViewControllers.count)")
         
     }

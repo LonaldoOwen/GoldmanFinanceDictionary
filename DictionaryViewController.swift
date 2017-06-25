@@ -11,10 +11,10 @@ import UIKit
 class DictionaryViewController: UIViewController {
     
     //
-    let nameArray = ["A", "B", "C"];
+    let nameArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "M", "N", "O", "P", "S", "T"];
     let screanWidth = UIScreen.main.bounds.width
     let screanHeight = UIScreen.main.bounds.height
-    let itemWidth = 60
+    let itemWidth = 40
     var selectedIndex: Int = 0
     var topScrollView: UIScrollView!
     //var contentScrollView: UIScrollView!
@@ -40,6 +40,9 @@ class DictionaryViewController: UIViewController {
         // 默认第一个button选中
         let defaulBtn: IndexButton = topScrollView.subviews[0] as! IndexButton
         defaulBtn.scale = 1
+        
+        //temp
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +50,8 @@ class DictionaryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // temp
+        
     
     
     // 构造顶部滚动view
