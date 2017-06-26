@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DictionaryViewController: UIViewController {
+class DictionaryViewController: UIViewController, UIScrollViewDelegate {
     
     //
     let nameArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "M", "N", "O", "P", "S", "T"];
@@ -29,6 +29,7 @@ class DictionaryViewController: UIViewController {
         view.addSubview(getTopScrollView())
         topScrollView.showsHorizontalScrollIndicator = false
         topScrollView.showsVerticalScrollIndicator = false
+        topScrollView.delegate = self
     
         // 添加page view
         pageVC = storyboard?.instantiateViewController(withIdentifier: "DicPageVC") as! DictionaryPageViewController
@@ -93,6 +94,9 @@ class DictionaryViewController: UIViewController {
     // 切换switch button
     func updateIndexButton(of index: Int) {
         print("index: \(index)")
+        // 调整button位置
+        changeSwitchButton(topScrollView.subviews[index] as! IndexButton)
+        // 调整变换
         for (id, subBtn) in topScrollView.subviews.enumerated() {
             let indexBtn: IndexButton = subBtn as! IndexButton
             if id == index {
@@ -102,6 +106,31 @@ class DictionaryViewController: UIViewController {
                 indexBtn.scale = 0
             }
         }
+    }
+    
+    // 滚动switch button，调整位置
+    func changeSwitchButton(_ button: IndexButton) {
+        var offsetX = button.center.x - screanWidth/2
+        let offsetMax = topScrollView.contentSize.width - screanWidth
+        if offsetX < 0 {
+            offsetX = 0
+        } else if offsetX > offsetMax {
+            offsetX = offsetMax
+        }
+        topScrollView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+    }
+    
+    
+    // MARK: UIScrollViewDelegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //
+        print(scrollView.contentOffset.x)
+    }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        //
+    }
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        //
     }
 
     /*
