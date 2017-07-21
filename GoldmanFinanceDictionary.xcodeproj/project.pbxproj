@@ -18,8 +18,8 @@
 		23301DC51EE6D14500C5DD7E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23301DC41EE6D14500C5DD7E /* TableViewController.swift */; };
 		5A004C2E1EFABAAD00CB43CF /* IndexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A004C2D1EFABAAD00CB43CF /* IndexButton.swift */; };
 		5A004C311EFFC9CE00CB43CF /* Ji.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A004C301EFFC9CE00CB43CF /* Ji.framework */; };
-		5A3B8FE61EF2C66B00D67C08 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B8FE51EF2C66B00D67C08 /* DictionaryViewController.swift */; };
-		5A3B8FE81EF2C6A600D67C08 /* DictionaryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B8FE71EF2C6A600D67C08 /* DictionaryPageViewController.swift */; };
+		5AEF97971F225FEB000E7628 /* DictionaryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF97951F225FEB000E7628 /* DictionaryPageViewController.swift */; };
+		5AEF97981F225FEB000E7628 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEF97961F225FEB000E7628 /* DictionaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,8 @@
 		23301DC41EE6D14500C5DD7E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		5A004C2D1EFABAAD00CB43CF /* IndexButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexButton.swift; sourceTree = "<group>"; };
 		5A004C301EFFC9CE00CB43CF /* Ji.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ji.framework; path = Carthage/Build/iOS/Ji.framework; sourceTree = "<group>"; };
-		5A3B8FE51EF2C66B00D67C08 /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryViewController.swift; path = ../DictionaryViewController.swift; sourceTree = "<group>"; };
-		5A3B8FE71EF2C6A600D67C08 /* DictionaryPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryPageViewController.swift; path = ../DictionaryPageViewController.swift; sourceTree = "<group>"; };
+		5AEF97951F225FEB000E7628 /* DictionaryPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryPageViewController.swift; sourceTree = "<group>"; };
+		5AEF97961F225FEB000E7628 /* DictionaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +113,12 @@
 			children = (
 				23301D941EE6CDC600C5DD7E /* AppDelegate.swift */,
 				23301D961EE6CDC600C5DD7E /* ViewController.swift */,
-				23301D981EE6CDC600C5DD7E /* Main.storyboard */,
-				5A3B8FE51EF2C66B00D67C08 /* DictionaryViewController.swift */,
-				5A3B8FE71EF2C6A600D67C08 /* DictionaryPageViewController.swift */,
+				5AEF97951F225FEB000E7628 /* DictionaryPageViewController.swift */,
+				5AEF97961F225FEB000E7628 /* DictionaryViewController.swift */,
 				23301DC41EE6D14500C5DD7E /* TableViewController.swift */,
 				23301DC21EE6D10900C5DD7E /* DictionaryTableViewCell.swift */,
 				5A004C2D1EFABAAD00CB43CF /* IndexButton.swift */,
+				23301D981EE6CDC600C5DD7E /* Main.storyboard */,
 				23301D9B1EE6CDC600C5DD7E /* Assets.xcassets */,
 				23301D9D1EE6CDC600C5DD7E /* LaunchScreen.storyboard */,
 				23301DA01EE6CDC600C5DD7E /* Info.plist */,
@@ -307,13 +307,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A3B8FE61EF2C66B00D67C08 /* DictionaryViewController.swift in Sources */,
 				23301D971EE6CDC600C5DD7E /* ViewController.swift in Sources */,
 				23301D951EE6CDC600C5DD7E /* AppDelegate.swift in Sources */,
 				5A004C2E1EFABAAD00CB43CF /* IndexButton.swift in Sources */,
 				23301DC31EE6D10900C5DD7E /* DictionaryTableViewCell.swift in Sources */,
 				23301DC51EE6D14500C5DD7E /* TableViewController.swift in Sources */,
-				5A3B8FE81EF2C6A600D67C08 /* DictionaryPageViewController.swift in Sources */,
+				5AEF97981F225FEB000E7628 /* DictionaryViewController.swift in Sources */,
+				5AEF97971F225FEB000E7628 /* DictionaryPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
